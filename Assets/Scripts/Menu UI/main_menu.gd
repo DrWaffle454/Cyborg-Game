@@ -9,7 +9,7 @@ func _on_start_button_pressed():
 
 #Options Button
 func _on_options_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Assets/Scenes/Menu UI/volume_menu.tscn")
 	
 
 #Quit button

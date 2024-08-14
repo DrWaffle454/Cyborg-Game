@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b77jdog0ificl"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Menu UI/main_menu.gd" id="1_8i8x4"]
-[ext_resource type="Texture2D" uid="uid://b8uh3h02qokqw" path="res://Assets/Images/UI/cebd4002-5e35-484c-8ca9-922d0499ab4e.png" id="2_77ly1"]
+[ext_resource type="Texture2D" uid="uid://b8uh3h02qokqw" path="res://Assets/Images/UI/MainMenu.png" id="2_77ly1"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -43,9 +43,9 @@ theme_override_colors/font_hover_pressed_color = Color(0.862745, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(580, 326.5)
-scale = Vector2(0.643973, 0.629883)
+[node name="Background Image" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(578, 324.5)
+scale = Vector2(0.646205, 0.633789)
 texture = ExtResource("2_77ly1")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

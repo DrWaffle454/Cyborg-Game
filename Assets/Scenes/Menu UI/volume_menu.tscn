@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://bvh6j1ku0f34k"]
+[gd_scene load_steps=4 format=3 uid="uid://bvh6j1ku0f34k"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Menu UI/volume_menu.gd" id="1_b7d1a"]
+[ext_resource type="Texture2D" uid="uid://cdo175cegddck" path="res://Assets/Images/UI/VolumeMenu.webp" id="1_bf7dt"]
+[ext_resource type="PackedScene" uid="uid://cdur14wkxqyh0" path="res://Assets/Scenes/Menu UI/volume_slider.tscn" id="3_nl7v4"]
 
 [node name="VolumeMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +11,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b7d1a")
+
+[node name="Dall·e2024-08-1412_14_28-ASimplifiedPost-apocalypticSceneWithAMinimalisticBackground,FeaturingOnlyAFewRuinedStructuresAndACloudy,OvercastSky_TheEnvironment" type="Sprite2D" parent="."]
+position = Vector2(579.5, 324)
+scale = Vector2(0.645647, 0.634766)
+texture = ExtResource("1_bf7dt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 490.0
+offset_top = 201.0
+offset_right = 658.0
+offset_bottom = 241.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+
+[node name="MasterVolume" parent="VBoxContainer" instance=ExtResource("3_nl7v4")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicVolume" parent="VBoxContainer" instance=ExtResource("3_nl7v4")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFXVolume" parent="VBoxContainer" instance=ExtResource("3_nl7v4")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 382.0
+offset_right = 592.0
+offset_bottom = 413.0
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
