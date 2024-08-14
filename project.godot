@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Cyborg Survival"
+run/main_scene="res://Assets/Scenes/Menu UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
