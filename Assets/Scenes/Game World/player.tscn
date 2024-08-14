@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgod7e3u474vm"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Game World/player.gd" id="1_hnkut"]
+[ext_resource type="Texture2D" uid="uid://d3cbg8ad5ik4x" path="res://Assets/Images/Tiles/Sprite_sheet8_13.png" id="2_vwdjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdi8q"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o88lv"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxgsq"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igmb1"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucvfo"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00r2w"]
+atlas = ExtResource("2_vwdjv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_en13d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdi8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o88lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxgsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igmb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucvfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00r2w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_hnkut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(436, 364)
+scale = Vector2(0.0898438, 0.0957031)
+sprite_frames = SubResource("SpriteFrames_en13d")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.564841
