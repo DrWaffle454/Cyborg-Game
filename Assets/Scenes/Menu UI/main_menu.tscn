@@ -15,10 +15,7 @@ script = ExtResource("1_8i8x4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -265.0
-offset_top = -75.0
-offset_right = 294.0
-offset_bottom = 240.0
+
 theme_override_constants/separation = 15
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
