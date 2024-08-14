@@ -1,5 +1,24 @@
-[gd_scene format=3 uid="uid://cgod7e3u474vm"]
+[gd_scene load_steps=4 format=3 uid="uid://cgod7e3u474vm"]
 
-[node name="Player" type="Node2D"]
+[ext_resource type="Script" path="res://Assets/Scripts/Game World/player.gd" id="1_hnkut"]
+[ext_resource type="Texture2D" uid="uid://ccxf5epwyv8rx" path="res://Assets/Images/Tiles/thrwoing.png" id="1_p06v7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gy822"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p06v7")
+}],
+"loop": true,
+"name": &"Test",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_hnkut")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(436, 364)
+scale = Vector2(0.0898438, 0.0957031)
+sprite_frames = SubResource("SpriteFrames_gy822")
+animation = &"Test"

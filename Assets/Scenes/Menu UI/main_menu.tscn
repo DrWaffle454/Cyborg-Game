@@ -29,7 +29,7 @@ text = "Start"
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Options"
+text = "Volume"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
