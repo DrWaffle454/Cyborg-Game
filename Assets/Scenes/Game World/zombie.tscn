@@ -132,7 +132,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swktm"]
 size = Vector2(10, 16)
 
-[node name="Zombie" type="Node"]
+[node name="Zombie" type="CharacterBody2D"]
 script = ExtResource("1_8ev3s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -149,22 +149,21 @@ shape = SubResource("RectangleShape2D_swktm")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
 
 [node name="RayCast_right" type="RayCast2D" parent="."]
-position = Vector2(8, -8)
-target_position = Vector2(12, 0)
+position = Vector2(13, -8)
+target_position = Vector2(7, 0)
 
 [node name="RayCast_left" type="RayCast2D" parent="."]
-position = Vector2(8, -8)
-target_position = Vector2(-12, 0)
+position = Vector2(3, -8)
+target_position = Vector2(-7, 0)
 
 [node name="RayCast_up" type="RayCast2D" parent="."]
-position = Vector2(8, -8)
-target_position = Vector2(0, -15)
+position = Vector2(8, -16)
+target_position = Vector2(0, -7)
 
 [node name="RayCast_down" type="RayCast2D" parent="."]
-position = Vector2(8, -8)
-target_position = Vector2(0, 15)
+position = Vector2(8, 0)
+target_position = Vector2(0, 8)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

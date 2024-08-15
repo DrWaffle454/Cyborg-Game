@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4a0gsbren48b"]
+[gd_scene load_steps=6 format=3 uid="uid://4a0gsbren48b"]
 
 [ext_resource type="Texture2D" uid="uid://uoy1c2lqhobw" path="res://Assets/Images/Tiles/Floor 1.0.png" id="1_sydsh"]
 [ext_resource type="PackedScene" uid="uid://cgod7e3u474vm" path="res://Assets/Scenes/Game World/player.tscn" id="2_vxlob"]
+[ext_resource type="PackedScene" uid="uid://dvm14f3rbfkm7" path="res://Assets/Scenes/Game World/zombie.tscn" id="3_xml2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktd2k"]
 texture = ExtResource("1_sydsh")
@@ -120,3 +121,5 @@ layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array(-458742, 458752, 2, -393222, 458752, 2, 524282, 458752, 2, 458762, 458752, 2, 327677, 393216, 0, 327678, 393216, 0, 327679, 393216, 0, 262144, 393216, 0, 262145, 393216, 0, 262146, 393216, 0, 262147, 393216, 0, 262148, 393216, 0, 262149, 393216, 0, 262150, 393216, 0, 262151, 393216, 0, 196615, 393216, 0, 131079, 393216, 0, 65543, 393216, 0, 7, 393216, 0, -65529, 393216, 0, -131065, 393216, 0, -196601, 393216, 0, -262137, 393216, 0, -262138, 393216, 0, -262139, 393216, 0, -262140, 393216, 0, -262141, 393216, 0, -262142, 393216, 0, -262143, 393216, 0, -262144, 393216, 0, -196609, 393216, 0, -196610, 393216, 0, -196611, 393216, 0, -131075, 393216, 0, -65539, 393216, 0, -3, 393216, 0, 65533, 393216, 0, 131069, 393216, 0, 196605, 393216, 0, 262141, 393216, 0)
 
 [node name="player" parent="." instance=ExtResource("2_vxlob")]
+
+[node name="Zombie" parent="." instance=ExtResource("3_xml2p")]
