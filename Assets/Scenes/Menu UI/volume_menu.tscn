@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbdxkime0lufq"]
+[gd_scene load_steps=4 format=3 uid="uid://bvh6j1ku0f34k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Menu UI/volume_menu.gd" id="1_b7d1a"]
 [ext_resource type="Texture2D" uid="uid://cdo175cegddck" path="res://Assets/Images/UI/VolumeMenu.webp" id="1_bf7dt"]
-[ext_resource type="PackedScene" uid="uid://b7xxj6aafhooc" path="res://Assets/Scenes/Menu UI/volume_slider.tscn" id="3_nl7v4"]
+[ext_resource type="PackedScene" uid="uid://cdur14wkxqyh0" path="res://Assets/Scenes/Menu UI/volume_slider.tscn" id="3_nl7v4"]
 
 [node name="VolumeMenu" type="Control"]
 layout_mode = 3
