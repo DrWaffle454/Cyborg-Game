@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b77jdog0ificl"]
+[gd_scene load_steps=2 format=3 uid="uid://b77jdog0ificl"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Menu UI/main_menu.gd" id="1_8i8x4"]
-[ext_resource type="Texture2D" uid="uid://b8uh3h02qokqw" path="res://Assets/Images/UI/MainMenu.png" id="2_77ly1"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -14,40 +13,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8i8x4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-z_index = 1
-offset_left = 31.0
-offset_top = 425.0
-offset_right = 590.0
-offset_bottom = 740.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -235.0
+offset_top = -74.0
+offset_right = 324.0
+offset_bottom = 241.0
 theme_override_constants/separation = 15
 
-[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Volume"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.862745, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
-[node name="Background Image" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(578, 324.5)
-scale = Vector2(0.646205, 0.633789)
-texture = ExtResource("2_77ly1")
-
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
