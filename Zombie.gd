@@ -31,9 +31,9 @@ func _process(delta):
 		direction.x = 1
 		animated_sprite_2d.flip_h = false
 	elif ray_cast_down.is_colliding():
-		direction.y = 1
-	elif ray_cast_up.is_colliding():
 		direction.y = -1
+	elif ray_cast_up.is_colliding():
+		direction.y = 1
 		
 	direction = direction.normalized()
 		
