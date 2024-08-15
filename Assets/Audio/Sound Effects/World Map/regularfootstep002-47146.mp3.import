@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wog2nvooc1e0"
+path="res://.godot/imported/regularfootstep002-47146.mp3-7e69d881e13737e4f483e4a72750cd72.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Effects/World Map/regularfootstep002-47146.mp3"
+dest_files=["res://.godot/imported/regularfootstep002-47146.mp3-7e69d881e13737e4f483e4a72750cd72.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

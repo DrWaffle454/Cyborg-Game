@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://cgod7e3u474vm"]
+[gd_scene load_steps=37 format=3 uid="uid://cgod7e3u474vm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Game World/player.gd" id="1_hnkut"]
 [ext_resource type="Texture2D" uid="uid://d3cbg8ad5ik4x" path="res://Assets/Images/Tiles/Sprite_sheet8_13.png" id="2_vwdjv"]
+[ext_resource type="AudioStream" uid="uid://wog2nvooc1e0" path="res://Assets/Audio/Sound Effects/World Map/regularfootstep002-47146.mp3" id="3_vcfar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jc1w"]
 atlas = ExtResource("2_vwdjv")
@@ -265,7 +266,7 @@ scale = Vector2(3.742, 4)
 sprite_frames = SubResource("SpriteFrames_bnyfi")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.466686
+frame_progress = 0.139066
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, -32)
@@ -275,3 +276,9 @@ shape = SubResource("RectangleShape2D_28o8m")
 position = Vector2(2, -7)
 zoom = Vector2(1.75, 1.75)
 position_smoothing_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vcfar")
+volume_db = -8.432
+pitch_scale = 1.83
+bus = &"SFX"

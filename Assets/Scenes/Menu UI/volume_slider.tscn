@@ -5,4 +5,6 @@
 [node name="VolumeSlider" type="HSlider"]
 offset_right = 410.0
 offset_bottom = 17.0
+max_value = 1.0
+step = 0.01
 script = ExtResource("1_4ep5c")
