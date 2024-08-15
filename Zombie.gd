@@ -25,15 +25,15 @@ func _process(delta):
 	
 	# Faces the right direction and doesn't run into walls
 	if ray_cast_right.is_colliding():
-		direction = Vector2(-1, 0).normalized()
+		direction.x = -1
 		animated_sprite_2d.flip_h = true
 	elif ray_cast_left.is_colliding():
-		direction = Vector2(1, 0).normalized()
+		direction.x = 1
 		animated_sprite_2d.flip_h = false
 	elif ray_cast_down.is_colliding():
-		direction = Vector2(0, 1).normalized()
+		direction.y = 1
 	elif ray_cast_up.is_colliding():
-		direction = Vector2(0, -1).normalized()
+		direction.y = -1
 		
 	direction = direction.normalized()
 		
@@ -43,6 +43,10 @@ func _process(delta):
 		movement_timer = 5
 			
 	velocity = direction * SPEED
+	if direction.x != 0 or direction.y != 0:
+		animated_sprite_2d.play("run")
+	else:
+		animated_sprite_2d.play("idle")
 	move_and_slide()
 	
 func _on_timer_timeout():

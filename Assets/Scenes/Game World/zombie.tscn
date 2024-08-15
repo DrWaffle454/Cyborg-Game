@@ -152,15 +152,15 @@ wait_time = 3.0
 
 [node name="RayCast_right" type="RayCast2D" parent="."]
 position = Vector2(13, -8)
-target_position = Vector2(7, 0)
+target_position = Vector2(8, 0)
 
 [node name="RayCast_left" type="RayCast2D" parent="."]
 position = Vector2(3, -8)
-target_position = Vector2(-7, 0)
+target_position = Vector2(-8, 0)
 
 [node name="RayCast_up" type="RayCast2D" parent="."]
 position = Vector2(8, -16)
-target_position = Vector2(0, -7)
+target_position = Vector2(0, -8)
 
 [node name="RayCast_down" type="RayCast2D" parent="."]
 position = Vector2(8, 0)
