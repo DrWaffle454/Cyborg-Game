@@ -266,7 +266,7 @@ scale = Vector2(3.742, 4)
 sprite_frames = SubResource("SpriteFrames_bnyfi")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.139066
+frame_progress = 0.36329
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, -32)

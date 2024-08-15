@@ -15,6 +15,10 @@ run/main_scene="res://Assets/Scenes/Menu UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MainMenuMusic="*res://Assets/Scenes/Menu UI/main_menu_music.tscn"
+
 [input]
 
 move_right={
