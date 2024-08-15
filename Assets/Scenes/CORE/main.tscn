@@ -5,7 +5,3 @@
 [node name="main" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_6yycc")]
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(20, -26)
-scale = Vector2(0.25, 0.25)
