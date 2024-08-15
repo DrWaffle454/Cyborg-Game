@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MainMenuMusic="*res://Assets/Scenes/Menu UI/main_menu_music.tscn"
+GameManager="*res://Assets/Scenes/CORE/game_manager.tscn"
 
 [display]
 
