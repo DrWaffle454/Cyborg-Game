@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4a0gsbren48b"]
+[gd_scene load_steps=7 format=3 uid="uid://4a0gsbren48b"]
 
 [ext_resource type="Texture2D" uid="uid://uoy1c2lqhobw" path="res://Assets/Images/Tiles/Floor 1.0.png" id="1_sydsh"]
 [ext_resource type="PackedScene" uid="uid://cgod7e3u474vm" path="res://Assets/Scenes/Game World/player.tscn" id="2_vxlob"]
 [ext_resource type="PackedScene" uid="uid://dvm14f3rbfkm7" path="res://Assets/Scenes/Game World/zombie.tscn" id="3_xml2p"]
+[ext_resource type="PackedScene" uid="uid://pljf87ndkbgv" path="res://Assets/Scenes/Menu UI/pause_menu.tscn" id="4_711as"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktd2k"]
 texture = ExtResource("1_sydsh")
@@ -123,3 +124,7 @@ layer_1/tile_data = PackedInt32Array(-458742, 458752, 2, -393222, 458752, 2, 524
 [node name="player" parent="." instance=ExtResource("2_vxlob")]
 
 [node name="Zombie" parent="." instance=ExtResource("3_xml2p")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_711as")]
