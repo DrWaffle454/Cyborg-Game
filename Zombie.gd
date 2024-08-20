@@ -7,6 +7,8 @@ var direction = Vector2.ZERO
 var movement_timer = 5
 # ~~~~~~~~~~~~~~~~~ #
 
+signal damagePlayer #///////////////////////////////////////////////////////////TEST////////////////////////////////////////////////////////////////////
+
 # Variables via children objects
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
@@ -27,6 +29,7 @@ func _process(delta):
 	if ray_cast_right.is_colliding():
 		direction.x = -1
 		animated_sprite_2d.flip_h = true
+		damagePlayer.emit() #//////////////////////////////////////////////////////////////TEST///////////////////////////////////////////////////////////
 	elif ray_cast_left.is_colliding():
 		direction.x = 1
 		animated_sprite_2d.flip_h = false

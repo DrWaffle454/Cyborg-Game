@@ -5,6 +5,9 @@ const SPEED = 60.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var walk_sound = $AudioStreamPlayer2D
 
+var currentHealth: int = 3
+const maxHealth: int = 3 
+
 func _ready():
 	# Set pitch_scale to speed up audio (e.g., 1.5 for 50% faster)
 	walk_sound.pitch_scale = 1.7
@@ -39,3 +42,12 @@ func _physics_process(_delta):
 	else:
 		if walk_sound.playing:
 			walk_sound.stop()
+
+func take_damage():
+	currentHealth -= 1
+
+func heal():
+	currentHealth += 1
+
+func die():
+	get_tree().change_scene_to_file("res://Assets/Scenes/Menu UI/main_menu.tscn")
