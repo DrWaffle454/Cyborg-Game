@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://cgod7e3u474vm"]
+[gd_scene load_steps=38 format=3 uid="uid://cgod7e3u474vm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Game World/player.gd" id="1_hnkut"]
 [ext_resource type="Texture2D" uid="uid://d3cbg8ad5ik4x" path="res://Assets/Images/Tiles/Sprite_sheet8_13.png" id="2_vwdjv"]
 [ext_resource type="AudioStream" uid="uid://wog2nvooc1e0" path="res://Assets/Audio/Sound Effects/World Map/regularfootstep002-47146.mp3" id="3_vcfar"]
+[ext_resource type="AudioStream" uid="uid://b0rsblen21bq" path="res://Assets/Audio/Sound Effects/World Map/wilhelm-1-86895.mp3" id="4_1wdx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jc1w"]
 atlas = ExtResource("2_vwdjv")
@@ -283,3 +284,8 @@ bus = &"SFX"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-106, -6.5)
 shape = SubResource("RectangleShape2D_28o8m")
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1wdx7")
+volume_db = 10.315
+bus = &"SFX"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chkwe68abafub"
+path="res://.godot/imported/male-scream-in-fear-123079.mp3-5bdde02e5e83191fa070a6e575dff999.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Effects/World Map/male-scream-in-fear-123079.mp3"
+dest_files=["res://.godot/imported/male-scream-in-fear-123079.mp3-5bdde02e5e83191fa070a6e575dff999.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

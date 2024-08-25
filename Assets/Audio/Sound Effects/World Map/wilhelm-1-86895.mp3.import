@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0rsblen21bq"
+path="res://.godot/imported/wilhelm-1-86895.mp3-090830e24bc5f3ca7204086d2751f107.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Effects/World Map/wilhelm-1-86895.mp3"
+dest_files=["res://.godot/imported/wilhelm-1-86895.mp3-090830e24bc5f3ca7204086d2751f107.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

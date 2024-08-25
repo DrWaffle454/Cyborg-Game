@@ -12,3 +12,7 @@ func paused_volume_menu_open():
 		$AnimationPlayer.play("volume_menu")
 	else: 
 		$AnimationPlayer.play("RESET")
+
+func paused_volume_menu_closed():
+	$AnimationPlayer.play("RESET")
+	is_toggled = false

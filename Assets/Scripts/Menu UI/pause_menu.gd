@@ -18,9 +18,11 @@ func pauseCheck():
 		pause()
 	elif Input.is_action_just_pressed("pause") and get_tree().paused == true:
 		resume()
+		paused_volume_menu.paused_volume_menu_closed()
 
 func _on_resume_pressed():
 	resume()
+	paused_volume_menu.paused_volume_menu_closed()
 
 func _on_volume_pressed():
 	paused_volume_menu.paused_volume_menu_open()

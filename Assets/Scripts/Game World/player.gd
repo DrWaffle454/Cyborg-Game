@@ -4,14 +4,30 @@ const SPEED = 60.0
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var walk_sound = $AudioStreamPlayer2D
+@onready var scream = $Scream
+
+@onready var scream_sounds = [
+	preload("res://Assets/Audio/Sound Effects/World Map/male-scream-81836.mp3"),
+	preload("res://Assets/Audio/Sound Effects/World Map/male-scream-in-fear-123079.mp3"),
+	preload("res://Assets/Audio/Sound Effects/World Map/wilhelm-1-86895.mp3"),
+	preload("res://Assets/Audio/Sound Effects/World Map/male-scream-123080.mp3")
+]
 
 var currentHealth: int = 3
-const maxHealth: int = 3 
+const maxHealth: int = 3
+var last_scream_index = -1
 
 func _ready():
 	# Set pitch_scale to speed up audio (e.g., 1.5 for 50% faster)
 	walk_sound.pitch_scale = 1.7
 	walk_sound.volume_db += 7.0
+	randomize()
+
+func _process(delta):
+	if !scream.is_playing() and Input.is_action_pressed("scream"):
+		play_random_scream()
+	else:
+		pass
 
 func _physics_process(_delta):
 	var direction = Vector2(
@@ -51,3 +67,15 @@ func heal():
 
 func die():
 	get_tree().change_scene_to_file("res://Assets/Scenes/Menu UI/main_menu.tscn")
+
+# Function to play a random scream sound, avoiding repetition
+func play_random_scream():
+	var random_index = randi() % scream_sounds.size()
+	
+	# Ensure the new sound is different from the last one
+	while random_index == last_scream_index:
+		random_index = randi() % scream_sounds.size()
+	
+	last_scream_index = random_index
+	scream.stream = scream_sounds[random_index]
+	scream.play()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvm14f3rbfkm7"]
+[gd_scene load_steps=20 format=3 uid="uid://dvm14f3rbfkm7"]
 
 [ext_resource type="Script" path="res://Zombie.gd" id="1_8ev3s"]
 [ext_resource type="Texture2D" uid="uid://puib62yon2ef" path="res://Assets/Images/Tiles/pixil-frame-0 (2).png" id="2_spaql"]
+[ext_resource type="AudioStream" uid="uid://dnfhuf4ldgcko" path="res://Assets/Audio/Sound Effects/World Map/free-zombie-moan-sounds-54824.mp3" id="3_w8o10"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_521qb"]
 atlas = ExtResource("2_spaql")
@@ -165,5 +166,10 @@ target_position = Vector2(0, -1)
 [node name="RayCast_down" type="RayCast2D" parent="."]
 position = Vector2(8, 0)
 target_position = Vector2(0, 1)
+
+[node name="Groan" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_w8o10")
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

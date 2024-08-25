@@ -7,7 +7,6 @@ var direction = Vector2.ZERO
 var movement_timer = 5
 # ~~~~~~~~~~~~~~~~~ #
 
-signal damagePlayer #///////////////////////////////////////////////////////////TEST////////////////////////////////////////////////////////////////////
 
 # Variables via children objects
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -19,17 +18,21 @@ signal damagePlayer #///////////////////////////////////////////////////////////
 
 @onready var timer = $Timer
 
+@onready var groan = $Groan#///////////////////////////////////
+
 func _ready():
 	set_random_direction()
-
+	groan.play()
 
 func _process(delta):
+	#Continues Basic Groaning noise /////////////////Might need to be replaced with other audio later////////////////////////////////
+	if !groan.is_playing():#/////////////////////////////////////////
+		groan.play()#////////////////////////////////////////////////
 	
 	# Faces the right direction and doesn't run into walls
 	if ray_cast_right.is_colliding():
 		direction.x = -1
 		animated_sprite_2d.flip_h = true
-		damagePlayer.emit() #//////////////////////////////////////////////////////////////TEST///////////////////////////////////////////////////////////
 	elif ray_cast_left.is_colliding():
 		direction.x = 1
 		animated_sprite_2d.flip_h = false
