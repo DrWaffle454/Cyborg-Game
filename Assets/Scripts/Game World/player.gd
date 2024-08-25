@@ -16,6 +16,7 @@ const SPEED = 60.0
 var currentHealth: int = 3
 const maxHealth: int = 3
 var last_scream_index = -1
+var is_shooting = false
 
 func _ready():
 	# Set pitch_scale to speed up audio (e.g., 1.5 for 50% faster)
@@ -28,22 +29,26 @@ func _process(delta):
 		play_random_scream()
 	else:
 		pass
+	if Input.is_action_just_pressed("Shoot"):
+		shoot()
 
 func _physics_process(_delta):
 	var direction = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	)
-	
-	if direction.x != 0 or direction.y != 0:
-		animated_sprite_2d.play("run")
-		if direction.x < 0:
-			animated_sprite_2d.flip_h = true
-		elif direction.x > 0:
-			animated_sprite_2d.flip_h = false
-	else:
-		animated_sprite_2d.play("idle")
-		
+
+	# Only play run or idle animations if not shooting
+	if not is_shooting:
+		if direction.x != 0 or direction.y != 0:
+			animated_sprite_2d.play("run")
+			if direction.x < 0:
+				animated_sprite_2d.flip_h = true
+			elif direction.x > 0:
+				animated_sprite_2d.flip_h = false
+		else:
+			animated_sprite_2d.play("idle")
+
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 
@@ -58,6 +63,12 @@ func _physics_process(_delta):
 	else:
 		if walk_sound.playing:
 			walk_sound.stop()
+
+func shoot():
+	is_shooting = true
+	animated_sprite_2d.play("shoot")
+	await(animated_sprite_2d, "animation_finished")
+	is_shooting = false
 
 func take_damage():
 	currentHealth -= 1

@@ -289,3 +289,6 @@ shape = SubResource("RectangleShape2D_28o8m")
 stream = ExtResource("4_1wdx7")
 volume_db = 10.315
 bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
