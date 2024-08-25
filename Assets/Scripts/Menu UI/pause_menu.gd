@@ -1,5 +1,7 @@
 extends Control
 
+@onready var paused_volume_menu = $PanelContainer/VBoxContainer/PausedVolumeMenu
+
 func _ready():
 	$AnimationPlayer.play("RESET")
 
@@ -21,7 +23,7 @@ func _on_resume_pressed():
 	resume()
 
 func _on_volume_pressed():
-	pass # Replace with function body.
+	paused_volume_menu.paused_volume_menu_open()
 	
 
 #Unpauses the game, then changes to main menu scene

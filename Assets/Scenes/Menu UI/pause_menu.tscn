@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://pljf87ndkbgv"]
+[gd_scene load_steps=13 format=3 uid="uid://pljf87ndkbgv"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Menu UI/pause_menu.gd" id="1_wmylh"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="1_xi54y"]
+[ext_resource type="PackedScene" uid="uid://budlhdao2v8l0" path="res://Assets/Scenes/Menu UI/paused_volume_menu.tscn" id="3_4yri2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62lwy"]
 bg_color = Color(0.655584, 0.0180515, 0.0179971, 1)
@@ -159,6 +160,9 @@ text = "Volume"
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="PausedVolumeMenu" parent="PanelContainer/VBoxContainer" instance=ExtResource("3_4yri2")]
+layout_mode = 2
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
