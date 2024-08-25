@@ -169,7 +169,6 @@ target_position = Vector2(0, 1)
 
 [node name="Groan" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_w8o10")
-max_distance = 5000.0
 bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
