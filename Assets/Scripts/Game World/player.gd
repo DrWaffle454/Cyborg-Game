@@ -11,7 +11,7 @@ const LOCK_DURATION = 0.5  # Duration during which flipping is locked
 @onready var flip_timer = $Shooting/flip_timer  # Reusing the flip_timer for both phases
 @onready var shotgun_noise = $Shooting/ShotgunBlast
 var is_shooting = false
-var allow_flipping = false  # Start with flipping locked
+var allow_flipping = true  # Start with flipping locked
 var can_shoot = true  # Allows for a cooldown between shots
 
 @onready var scream_sounds = [
