@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://co5rvhnx8suxd"
+path="res://.godot/imported/080902-shotgun-39753-audiotrimmercom-2_hMGopA9z.mp3-2891ddd9b12fca5b21d54405d4aa407e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Effects/World Map/Gunshots/080902-shotgun-39753-audiotrimmercom-2_hMGopA9z.mp3"
+dest_files=["res://.godot/imported/080902-shotgun-39753-audiotrimmercom-2_hMGopA9z.mp3-2891ddd9b12fca5b21d54405d4aa407e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

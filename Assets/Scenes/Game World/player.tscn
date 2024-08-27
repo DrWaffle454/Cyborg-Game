@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://cgod7e3u474vm"]
+[gd_scene load_steps=39 format=3 uid="uid://cgod7e3u474vm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Game World/player.gd" id="1_hnkut"]
 [ext_resource type="Texture2D" uid="uid://d3cbg8ad5ik4x" path="res://Assets/Images/Tiles/Sprite_sheet8_13.png" id="2_vwdjv"]
 [ext_resource type="AudioStream" uid="uid://wog2nvooc1e0" path="res://Assets/Audio/Sound Effects/World Map/regularfootstep002-47146.mp3" id="3_vcfar"]
 [ext_resource type="AudioStream" uid="uid://b0rsblen21bq" path="res://Assets/Audio/Sound Effects/World Map/wilhelm-1-86895.mp3" id="4_1wdx7"]
+[ext_resource type="AudioStream" uid="uid://co5rvhnx8suxd" path="res://Assets/Audio/Sound Effects/World Map/Gunshots/080902-shotgun-39753-audiotrimmercom-2_hMGopA9z.mp3" id="5_exxu2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jc1w"]
 atlas = ExtResource("2_vwdjv")
@@ -267,7 +268,7 @@ script = ExtResource("1_hnkut")
 position = Vector2(-103, -9)
 scale = Vector2(0.966749, 1)
 sprite_frames = SubResource("SpriteFrames_bnyfi")
-animation = &"run"
+animation = &"shoot"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
@@ -292,3 +293,17 @@ bus = &"SFX"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="Shooting" type="Node" parent="."]
+
+[node name="shoot_timer" type="Timer" parent="Shooting"]
+
+[node name="flip_timer" type="Timer" parent="Shooting"]
+
+[node name="ShotgunBlast" type="AudioStreamPlayer2D" parent="Shooting"]
+stream = ExtResource("5_exxu2")
+volume_db = 7.0
+bus = &"SFX"
+
+[connection signal="timeout" from="Shooting/shoot_timer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="Shooting/flip_timer" to="." method="_on_flip_timer_timeout"]
