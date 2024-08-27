@@ -2,16 +2,17 @@ extends CharacterBody2D
 
 const SPEED = 60.0
 const SHOOT_ANIMATION_DURATION = 1.0  # The total duration of the shoot animation
-const FLIP_DURATION = 0.5  # Duration during which flipping is allowed
+const LOCK_DURATION = 0.5  # Duration during which flipping is locked
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var walk_sound = $AudioStreamPlayer2D
 @onready var scream = $Scream
 @onready var shoot_timer = $Shooting/shoot_timer  # Assuming shoot_timer is already a node in the scene tree
-@onready var flip_timer = $Shooting/flip_timer  # Assuming flip_timer is already a node in the scene tree
+@onready var flip_timer = $Shooting/flip_timer  # Reusing the flip_timer for both phases
 @onready var shotgun_noise = $Shooting/ShotgunBlast
 var is_shooting = false
-var allow_flipping = true
+var allow_flipping = false  # Start with flipping locked
+var can_shoot = true  # Allows for a cooldown between shots
 
 @onready var scream_sounds = [
 	preload("res://Assets/Audio/Sound Effects/World Map/male-scream-81836.mp3"),
@@ -38,9 +39,8 @@ func _process(delta):
 	if !scream.is_playing() and Input.is_action_pressed("scream"):
 		play_random_scream()
 
-	if Input.is_action_just_pressed("Shoot"):
+	if Input.is_action_just_pressed("Shoot") and can_shoot:
 		shoot()
-		shotgun_noise.play()
 
 func _physics_process(_delta):
 	var direction = Vector2(
@@ -48,14 +48,14 @@ func _physics_process(_delta):
 		Input.get_axis("move_up", "move_down")
 	)
 	
-	#Manages character model flipping while shooting
+	# Manages character model flipping while shooting
 	if allow_flipping and direction.x != 0:
 		if direction.x < 0:
 			animated_sprite_2d.flip_h = true
 		elif direction.x > 0:
 			animated_sprite_2d.flip_h = false
 
-	if is_shooting == false:
+	if not is_shooting:
 		if direction.x != 0 or direction.y != 0:
 			animated_sprite_2d.play("run")
 		else:
@@ -77,23 +77,26 @@ func _physics_process(_delta):
 			walk_sound.stop()
 
 func shoot():
-	if not is_shooting:
+	if not is_shooting and can_shoot:
 		is_shooting = true
-		allow_flipping = true
+		can_shoot = false  # Prevent further shooting until cooldown is over
+		allow_flipping = false  # Lock flipping initially
 		animated_sprite_2d.play("shoot")
+		shotgun_noise.play()
 		
-		# Start the flip timer for the first half of the animation
-		flip_timer.start(FLIP_DURATION)
+		# Start the flip timer to unlock flipping during the second half of the animation
+		flip_timer.start(LOCK_DURATION)
 		
 		# Start the shoot timer for the full duration of the shoot animation
 		shoot_timer.start(SHOOT_ANIMATION_DURATION)
 
 func _on_flip_timer_timeout():
-	allow_flipping = false
+	allow_flipping = true  # Allow flipping during the second half of the shoot animation
 
 func _on_shoot_timer_timeout():
 	is_shooting = false
-	allow_flipping = true  # Reset flipping to be allowed for the next shoot
+	can_shoot = true  # Allow shooting again after the animation is complete
+	allow_flipping = true  # Ensure flipping is allowed for the next action
 
 func take_damage():
 	currentHealth -= 1

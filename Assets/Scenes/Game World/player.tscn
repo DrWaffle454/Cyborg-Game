@@ -297,8 +297,10 @@ current = true
 [node name="Shooting" type="Node" parent="."]
 
 [node name="shoot_timer" type="Timer" parent="Shooting"]
+one_shot = true
 
 [node name="flip_timer" type="Timer" parent="Shooting"]
+one_shot = true
 
 [node name="ShotgunBlast" type="AudioStreamPlayer2D" parent="Shooting"]
 stream = ExtResource("5_exxu2")
